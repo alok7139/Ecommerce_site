@@ -74,6 +74,7 @@ import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 import shopeasy from './shopeasy.png'
+import model_img from './model_img.jpg'
 
 export const assets = {
     logo,
@@ -94,7 +95,8 @@ export const assets = {
     razorpay_logo,
     stripe_logo,
     cross_icon,
-    shopeasy
+    shopeasy,
+    model_img
 }
 
 export const products = [

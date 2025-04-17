@@ -24,7 +24,7 @@ function Hero() {
         </div>
 
         {/* right side */}
-        <img src={assets.hero_img} className='w-full sm:w-1/2' />
+        <img src={assets.model_img} className='w-full sm:w-1/2' />
        
     </div>
   )
