@@ -56,7 +56,7 @@ function Navbar() {
 
             <Link to={'/cart'} className='relative'>
                <img src={assets.cart_icon} className='w-5 min-w-5'/>
-               <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 text-white  bg-black aspect-square rounded-full text-[8px]' >{getcartcount() ?? 0}</p>
+               <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 text-white  bg-black aspect-square rounded-full text-[8px]' >{getcartcount() }</p>
             </Link>
             <img onClick={() => setvisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden'/>
         </div>

@@ -51,13 +51,21 @@ const Shopcontextprovider = (props) => {
         }
     }
 
-    useEffect(() => {
-        console.log(cartitems);
-    } , [cartitems])
+    const updatequantity = async(itemid,size,quantity) => {
+        let cartdata = structuredClone(cartitems);
+        cartdata[itemid][size] = quantity;
+
+        setcartitems(cartdata);
+
+    }
+
+    // useEffect(() => {
+    //     console.log(cartitems);
+    // } , [cartitems])
 
     const value = {
         products, currency , deliveryfees , search , setsearch,showsearch,setshowsearch,
-        addtocart , cartitems , getcartcount
+        addtocart , cartitems , getcartcount , updatequantity
     }
 
 
