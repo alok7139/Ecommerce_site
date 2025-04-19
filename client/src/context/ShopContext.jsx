@@ -80,9 +80,9 @@ const Shopcontextprovider = (props) => {
         return totalamount;
     }
 
-    // useEffect(() => {
-    //     console.log(cartitems);
-    // } , [cartitems])
+    useEffect(() => {
+        // console.log(cartitems);
+    } , [cartitems])
 
     const value = {
         products, currency , deliveryfees , search , setsearch,showsearch,setshowsearch,
