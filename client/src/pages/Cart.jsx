@@ -10,6 +10,8 @@ function Cart() {
 
   const [cartdata, setcartdata] = useState([]);
 
+  // console.log(products)
+
   useEffect(() => {
     const tempdata = [];
     for(const items in cartitems){
