@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
-import { config } from 'dotenv'
+import { connectdb } from './config/mongodb.js';
 
 // app config
 const app = express();
@@ -24,4 +24,6 @@ app.get('/' , (req,res) => {
 app.listen(port , () => {
     console.log(`server is listen on ${port}`)
 })
+
+connectdb();
 
