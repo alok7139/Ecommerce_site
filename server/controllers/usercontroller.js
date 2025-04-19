@@ -27,7 +27,7 @@ export const loginuser = async(req,res) => {
         if(!ismatch){
             return res.json({
                 success:false,
-                message: "Password is wrong"
+                message: "Invalid credentials"
             })
         }
         else {
@@ -39,7 +39,11 @@ export const loginuser = async(req,res) => {
         }
 
     } catch (error) {
-        
+        console.log(`${error}`)
+        res.json({
+            success:false,
+            message:error.message
+        })
     }
 }
 
