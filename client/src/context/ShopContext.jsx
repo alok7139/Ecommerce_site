@@ -10,9 +10,11 @@ const Shopcontextprovider = (props) => {
 
     const currency = '₹';
     const deliveryfees = 99;
+    const backendurl = import.meta.env.VITE_BACKEND_URL;
     const [search , setsearch] = useState('');
     const [showsearch, setshowsearch] = useState(false)
     const [cartitems, setcartitems] = useState({});
+    const [token, settoken] = useState('');
     const navigate = useNavigate();
 
     const addtocart = async(itemid,size) => {
@@ -86,7 +88,8 @@ const Shopcontextprovider = (props) => {
 
     const value = {
         products, currency , deliveryfees , search , setsearch,showsearch,setshowsearch,
-        addtocart , cartitems , getcartcount , updatequantity,getcartamount,navigate
+        addtocart , cartitems , getcartcount , updatequantity,getcartamount,navigate,
+        backendurl , token , settoken
     }
 
 

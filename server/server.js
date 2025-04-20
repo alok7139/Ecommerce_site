@@ -8,17 +8,19 @@ import productroute from './routes/productroute.js'
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT ;
 connectcloudinary();
 
 // middleware
-app.use(express.json());
-app.use(express.urlencoded({extended:true}))
 app.use(cors({
-       origin: [process.env.FRONTEND_URI],
-       methods: ["GET" , "POST" , "PUT" , "DELETE"],
-       credentials:true,
+    origin: [process.env.FRONTEND_URI],
+    methods: ["GET" , "POST" , "PUT" , "DELETE"],
+    credentials:true,
 }))
+app.use(express.json());
+
+app.use(express.urlencoded({extended:true}))
+
 
 // api endpoint
 app.use('/api/user' , userroutes);
