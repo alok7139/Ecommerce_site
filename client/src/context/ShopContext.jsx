@@ -86,6 +86,13 @@ const Shopcontextprovider = (props) => {
         // console.log(cartitems);
     } , [cartitems])
 
+
+    useEffect(() => {
+        if(!token && localStorage.getItem('token')){
+            settoken(localStorage.getItem('token'));
+        }
+    })
+
     const value = {
         products, currency , deliveryfees , search , setsearch,showsearch,setshowsearch,
         addtocart , cartitems , getcartcount , updatequantity,getcartamount,navigate,
