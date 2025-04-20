@@ -7,7 +7,7 @@ function Login() {
 
   const { token,settoken, navigate , backendurl} = useContext(ShopContext)
 
-  const [currentstate, setCurrentstate] = useState('Sign Up')
+  const [currentstate, setCurrentstate] = useState('Login')
 
   const [name, setname] = useState('')
   const [password, setpassword] = useState('')
