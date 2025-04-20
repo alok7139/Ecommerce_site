@@ -22,6 +22,7 @@ function Login() {
             if(res.data.success){
               settoken(res.data.token);
               localStorage.setItem('token' , res.data.token);
+              toast.success(res.data.message);
             }
             else{
               toast.error(res.data.message);
@@ -33,6 +34,7 @@ function Login() {
             if(res.data.success){
               settoken(res.data.token);
               localStorage.setItem('token', res.data.token);
+              toast.success(res.data.message);
             }
             else{
               toast.error(res.data.message);
