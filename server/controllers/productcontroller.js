@@ -30,7 +30,7 @@ export const addproduct = async(req,res) =>{
         }
 
 
-        console.log(productdata);
+        // console.log(productdata);
         const product = new productModel(productdata);
 
         await product.save();
@@ -55,18 +55,61 @@ export const addproduct = async(req,res) =>{
 
 // function for list product
 export const listproduct = async(req,res) =>{
+    try {
+        
+       const products = await productModel.find({});
+       res.json({
+        success:true,
+        products
+       })
 
+    } catch (error) {
+        console.log(error.message)
+        res.json({
+            success:false,
+            message: error.message
+        })
+    }
 }
 
 
 // function for remove product
 export const removeproduct = async(req,res) =>{
-
+    try {
+        await productModel.findByIdAndDelete(req.body.id);
+        res.json({
+            success:true,
+            message: "Product removed"
+        })
+        
+    } catch (error) {
+        console.log(error.message)
+        res.json({
+            success:false,
+            message: error.message
+        })
+    }
 }
 
 
 //function for single product info
 export const singleproduct = async(req,res) =>{
+    try {
+          
+        const {productid} = req.body;
+        const product = await productModel.findById(productid)
 
+        res.json({
+            success:true,
+            product
+        })
+
+    } catch (error) {
+        console.log(error.message)
+        res.json({
+            success:false,
+            message: error.message
+        })
+    }
 }
 

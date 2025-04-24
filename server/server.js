@@ -33,6 +33,29 @@ app.get('/' , (req,res) => {
     res.send('API WORKING');
 })
 
+
+// if(cluster.isPrimary){
+//     console.log(`Primary ${process.pid} is running`);
+//     for(let i=0;i<numCPUs;i++){
+//         cluster.fork();
+//     }
+// }
+// else{
+    
+//     app.get("/" , (req,res) => {
+//         return res.json({
+//             message: `server is running on process id ${process.pid}`
+            
+//         })
+//         // console.log(process.pid);
+//     })
+
+//     app.listen((process.env.PORT) , () => {
+//         console.log(`server is running on ${process.env.PORT}`)
+//     })
+// console.log(`Worker ${process.pid} started`);
+// }
+
 app.listen(port , () => {
     console.log(`server is listen on ${port}`)
 })
