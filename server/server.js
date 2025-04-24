@@ -6,8 +6,15 @@ import { connectcloudinary } from './config/cloudinary.js';
 import userroutes from './routes/userroutes.js'
 import productroute from './routes/productroute.js'
 // import cartroute from './routes/cartroute.js'
+import { availableParallelism } from 'node:os';
+import process from 'node:process';
 
 // app config
+
+const numCPUs = availableParallelism();
+
+console.log(numCPUs);
+
 const app = express();
 const port = process.env.PORT ;
 connectcloudinary();
@@ -31,9 +38,27 @@ app.get('/' , (req,res) => {
     res.send('API WORKING');
 })
 
-app.listen(port , () => {
-    console.log(`server is listen on ${port}`)
-})
+if(cluster.isPrimary){
+    console.log(`Primary ${process.pid} is running`);
+    for(let i=0;i<numCPUs;i++){
+        cluster.fork();
+    }
+}
+else{
+    
+    app.get("/" , (req,res) => {
+        return res.json({
+            message: `server is running on process id ${process.pid}`
+            
+        })
+        // console.log(process.pid);
+    })
+
+    app.listen((process.env.PORT) , () => {
+        console.log(`server is running on ${process.env.PORT}`)
+    })
+console.log(`Worker ${process.pid} started`);
+}
 
 connectdb();
 
