@@ -16,7 +16,7 @@ connectcloudinary();
 
 // middleware
 app.use(cors({
-    origin: [process.env.FRONTEND_URI],
+    origin: [process.env.FRONTEND_URI , process.env.ADMIN_URI],
     methods: ["GET" , "POST" , "PUT" , "DELETE"],
     credentials:true,
 }))
