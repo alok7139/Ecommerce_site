@@ -1,18 +1,18 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Add from './pages/Add'
-import assests from './assets/assets'
+// import assests from './assets/assets'
 import Navbar from './components/Navbar'
 
 
 function App() {
   return (
-    <div className='bg-red-500'>
+    <div className=''>
       <Navbar/>
-      {/* <Routes>
+      <Routes>
        <Route element={<Add/>} />
 
-      </Routes> */}
+      </Routes>
     </div>
   )
 }
