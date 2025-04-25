@@ -3,16 +3,23 @@ import { Route, Routes } from 'react-router-dom'
 import Add from './pages/Add'
 // import assests from './assets/assets'
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 
 
 function App() {
   return (
-    <div className=''>
-      <Navbar/>
-      <Routes>
-       <Route element={<Add/>} />
+    <div className='bg-gray-50 min-h-screen'>
 
-      </Routes>
+      <>
+      <Navbar/>
+      <hr/>
+
+       <div className='flex w-full'>
+        <Sidebar/>
+
+      </div>
+      </>
+      
     </div>
   )
 }
