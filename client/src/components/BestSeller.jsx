@@ -13,7 +13,7 @@ function BestSeller() {
        const bestproduct =products.filter((item) => (item.bestseller))
 
        setbestSeller(bestproduct.slice(0,5));
-    } , [])
+    } , [products])
 
   return (
     <div className='my-10'>

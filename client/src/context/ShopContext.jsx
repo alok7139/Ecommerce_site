@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import { products } from "../assets/assets";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 export const ShopContext = createContext();
 
@@ -16,6 +16,7 @@ const Shopcontextprovider = (props) => {
     const [cartitems, setcartitems] = useState({});
     const [token, settoken] = useState('');
     const navigate = useNavigate();
+    const [products, setproducts] = useState([])
 
     const addtocart = async(itemid,size) => {
         if(!size){
@@ -82,8 +83,26 @@ const Shopcontextprovider = (props) => {
         return totalamount;
     }
 
+    const getproductdata = async() => {
+        try {
+            const res = await axios.get(backendurl + '/api/product/list' , {withCredentials:true })
+            if(res.data.success){
+                setproducts(res.data.products);
+            }
+            else{
+                toast.error(res.data.message);
+            }
+        } catch (error) {
+            console.log(res.data.message);
+            toast.error(res.data.message);
+        }
+    }
+
+
+
     useEffect(() => {
         // console.log(cartitems);
+        getproductdata();
     } , [cartitems])
 
 
