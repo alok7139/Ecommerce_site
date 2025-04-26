@@ -70,7 +70,7 @@ function Collection() {
 
     useEffect(() => {
        applyfilter();
-    }, [category , subcategory ,search , showsearch])
+    }, [category , subcategory ,search , showsearch , products])
 
     useEffect(() => {
         sortproduct();
@@ -100,7 +100,7 @@ function Collection() {
                 </p>
 
                 <p className='flex gap-2'>
-                    <input type='checkbox' className='w-3' value={"Kids"} onChange={togglecategory}/>KIDS
+                    <input type='checkbox' className='w-3' value={"kids"} onChange={togglecategory}/>KIDS
 
                 </p>
 

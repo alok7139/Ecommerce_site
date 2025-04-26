@@ -11,7 +11,7 @@ function Latestcollection() {
 
     useEffect(() => {
       setlatestproduct(products.slice(0,10));
-    } , [])
+    } , [products])
 
     // console.log(products);
 
