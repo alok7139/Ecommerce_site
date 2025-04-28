@@ -15,7 +15,7 @@ function Orders({token}) {
     }
 
     try {
-      const res = await axios.post( 'http://localhost:3000/api/order/list'  ,{},  {withCredentials:true, headers:{token}})
+      const res = await axios.post( 'https://ecommerce-site-chl3.onrender.com/api/order/list'  ,{},  {withCredentials:true, headers:{token}})
       console.log(res)
       if(res.data.success){
         setorders(res.data.orders)
