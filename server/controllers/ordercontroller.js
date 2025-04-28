@@ -17,5 +17,18 @@ export const placeorderrazorpay = async(req,res) => {
     
 }
 
+export const allorders= async(req,res) => {
+   
+}
+
+
+export const userorders= async(req,res) => {
+   
+}
+
+export const updatestatus= async(req,res) => {
+   
+}
+
 
 // 
