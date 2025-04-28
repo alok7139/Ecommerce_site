@@ -8,6 +8,7 @@ import productroute from './routes/productroute.js'
 import cartroute from './routes/cartroute.js'
 import { availableParallelism } from 'node:os';
 import process from 'node:process';
+import orderroute from './routes/orderrorute.js'
 
 // app config
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.urlencoded({extended:true}))
 app.use('/api/user' , userroutes);
 app.use('/api/product' , productroute );
 app.use('/api/cart' , cartroute);
+app.use('/api/order' , orderroute);
 app.get('/' , (req,res) => {
     res.send('API WORKING');
 })

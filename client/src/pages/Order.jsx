@@ -5,7 +5,7 @@ import { assets } from '../assets/assets';
 
 function Order() {
 
-  const {products , currency , price} = useContext(ShopContext);
+  const {backendurl , currency , price} = useContext(ShopContext);
 
   console.log(products)
 
