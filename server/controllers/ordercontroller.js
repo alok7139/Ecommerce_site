@@ -8,7 +8,7 @@ export const placeorder = async(req,res) => {
    try {
     const {userid , items,amount ,address} = req.body;
     const orderdata = {
-        userid , items , amount , payemntmethod: "COD",
+        userid , items , amount , paymentmethod: "COD",
         payment: false, date: Date.now(),address
     }
 
@@ -43,7 +43,18 @@ export const placeorderrazorpay = async(req,res) => {
 }
 
 export const allorders= async(req,res) => {
-   
+   try {
+    const orders = await orderModel.find({});
+    res.json({
+        success:true,
+        orders
+    })
+   } catch (error) {
+    res.josn({
+        success:true,
+        message : error.message
+    })
+   }
 }
 
 
